@@ -9,7 +9,7 @@
 	<RunConfiguration>
 		<MaxCpuCount>4</MaxCpuCount>
 		<EnvironmentVariables>
-			<HEADED>1</HEADED>
+			<HEADED>0</HEADED>
 		</EnvironmentVariables>
 	</RunConfiguration>
 	<Playwright>
