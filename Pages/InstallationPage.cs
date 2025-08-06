@@ -21,8 +21,8 @@ public class InstallationPage : PageTest
         try
         {
             await Expect(_pageHeader).ToBeVisibleAsync();
-            await Expect(_page).ToHaveTitleAsync(Constants.pageTitle);
-            await Expect(_page).ToHaveURLAsync(Constants.pageURL);
+            await Expect(_page).ToHaveTitleAsync(Constants.PageTitle);
+            await Expect(_page).ToHaveURLAsync(Constants.PageUrl);
         }
         catch (Exception e)
         {
