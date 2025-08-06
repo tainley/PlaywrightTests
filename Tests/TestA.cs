@@ -4,7 +4,7 @@ using PlaywrightTests.Pages;
 namespace PlaywrightTests.Tests;
 
 [TestClass]
-public partial class Test : PageTest
+public partial class TestA : PageTest
 {
     private HomePage _homePage;
     private InstallationPage _installationPage;
@@ -17,7 +17,7 @@ public partial class Test : PageTest
     }
 
     [TestMethod]
-    public async Task PageLinks()
+    public async Task PageLinksA()
     {
         try
         {
@@ -27,7 +27,7 @@ public partial class Test : PageTest
         }
         catch (Exception e)
         {
-            Assert.Fail("Page Links test failed - " + e.ToString());
+            Assert.Fail("Page Links test A failed - " + e.ToString());
         }
     }
-}
+  }
