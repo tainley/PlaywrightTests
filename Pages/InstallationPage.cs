@@ -1,26 +1,28 @@
 ﻿using Microsoft.Playwright;
 using Microsoft.Playwright.MSTest;
+using PlaywrightTests.Utilities;
+using static System.Net.WebRequestMethods;
 
 namespace PlaywrightTests.Pages;
 
 public class InstallationPage : PageTest
 {
     private readonly IPage _page;
-    private readonly ILocator _pageTitle;
+    private readonly ILocator _pageHeader;
 
     public InstallationPage(IPage page)
     {
         _page = page;
-        _pageTitle = page.GetByRole(AriaRole.Heading, new() { Name = "Installation" });
+        _pageHeader = page.GetByRole(AriaRole.Heading, new() { Name = "Installation" });
     }
 
     public async Task AssertTitle()
     {
         try
         {
-            await Expect(_pageTitle).ToBeVisibleAsync();
-            await Expect(_page).ToHaveTitleAsync("Installation | Playwright");
-            await Expect(_page).ToHaveURLAsync("https://playwright.dev/docs/intro");
+            await Expect(_pageHeader).ToBeVisibleAsync();
+            await Expect(_page).ToHaveTitleAsync(Constants.pageTitle);
+            await Expect(_page).ToHaveURLAsync(Constants.pageURL);
         }
         catch (Exception e)
         {
