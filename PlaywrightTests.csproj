@@ -10,10 +10,15 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
     <PackageReference Include="Microsoft.Playwright.MSTest" Version="1.54.0" />
     <PackageReference Include="MSTest" Version="3.10.1" />
+    <PackageReference Include="Reqnroll.MsTest" Version="2.4.1" />
   </ItemGroup>
 
   <ItemGroup>
     <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\" />
   </ItemGroup>
 
 </Project>
