@@ -1,23 +1,17 @@
-using Microsoft.Playwright;
 using PlaywrightTests.Pages;
+using PlaywrightTests.Utilities;
 using Reqnroll;
 
 namespace PlaywrightTests.Steps
 {
     [Binding]
-    public class NavigationStepDefinitions : IDisposable
+    public class NavigationStepDefinitions : StepBase
     {
-        private readonly IPlaywright playwright;
-        private readonly IBrowser browser;
-        private readonly IPage page;
         private readonly HomePage homePage;
         private readonly InstallationPage installationPage;
 
         public NavigationStepDefinitions()
         {
-            playwright = Playwright.CreateAsync().GetAwaiter().GetResult();
-            browser = playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions { Headless = true }).GetAwaiter().GetResult();
-            page = browser.NewPageAsync().GetAwaiter().GetResult();
             homePage = new HomePage(page);
             installationPage = new InstallationPage(page);
         }
@@ -38,13 +32,6 @@ namespace PlaywrightTests.Steps
         public async Task ThenIShouldSeeTheInstallationPage()
         {
             await installationPage.AssertTitle();
-        }
-
-        public void Dispose()
-        {
-            page?.CloseAsync().GetAwaiter().GetResult();
-            browser?.CloseAsync().GetAwaiter().GetResult();
-            playwright?.Dispose();
         }
     }
 }
