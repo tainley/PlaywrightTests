@@ -1,7 +1,6 @@
 ﻿using Microsoft.Playwright;
 using Microsoft.Playwright.MSTest;
 using PlaywrightTests.Utilities;
-using static System.Net.WebRequestMethods;
 
 namespace PlaywrightTests.Pages;
 

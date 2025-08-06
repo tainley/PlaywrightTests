@@ -19,15 +19,8 @@ public partial class TestA : PageTest
     [TestMethod]
     public async Task PageLinksA()
     {
-        try
-        {
-            await _homePage.GoToHomePage();
-            await _homePage.ClickGetStarted();
-            await _installationPage.AssertTitle();
-        }
-        catch (Exception e)
-        {
-            Assert.Fail("Page Links test A failed - " + e.ToString());
-        }
+        await _homePage.GoToHomePage();
+        await _homePage.ClickGetStarted();
+        await _installationPage.AssertTitle();
     }
-  }
+}
