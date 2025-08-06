@@ -1,8 +1,9 @@
 ﻿using Microsoft.Playwright;
+using Microsoft.Playwright.MSTest;
 
 namespace PlaywrightTests.Pages;
 
-public class HomePage
+public class HomePage: PageTest
 {
     private readonly IPage _page;
     private readonly ILocator _getStarted;

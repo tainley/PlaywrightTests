@@ -1,8 +1,9 @@
 ﻿using Microsoft.Playwright;
+using Microsoft.Playwright.MSTest;
 
 namespace PlaywrightTests.Pages;
 
-public class InstallationPage
+public class InstallationPage : PageTest
 {
     private readonly IPage _page;
     private readonly ILocator _pageTitle;
@@ -17,7 +18,9 @@ public class InstallationPage
     {
         try
         {
-            await _pageTitle.IsVisibleAsync();
+            await Expect(_pageTitle).ToBeVisibleAsync();
+            await Expect(_page).ToHaveTitleAsync("Installation | Playwright");
+            await Expect(_page).ToHaveURLAsync("https://playwright.dev/docs/intro");
         }
         catch (Exception e)
         {
