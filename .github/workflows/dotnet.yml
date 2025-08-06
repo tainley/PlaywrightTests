@@ -17,6 +17,6 @@ jobs:
     - name: Build & Install
       run: dotnet build
     - name: Install Chromium Headless Shell only
-      run: pwsh bin/Debug/net9.0/playwright.ps1 install --with-deps --only-shell
+      run: pwsh bin/Debug/net9.0/playwright.ps1 install chromium
     - name: Run your tests
       run: dotnet test
