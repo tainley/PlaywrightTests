@@ -20,6 +20,7 @@ namespace PlaywrightTests.Utilities
             page?.CloseAsync().GetAwaiter().GetResult();
             browser?.CloseAsync().GetAwaiter().GetResult();
             playwright?.Dispose();
+            GC.SuppressFinalize(this);
         }
     }
 }
